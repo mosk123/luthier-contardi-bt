@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./bootstrap-icons-1.7.2/bootstrap-icons.css">
     <link rel="stylesheet" href="./css-bt/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/estilos.css" />
     <title>Contacto</title>
   </head>
@@ -18,35 +19,35 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand text-muted" href="index.html">Inicio</a>
+            <a class="navbar-brand text-light" href="index.html">Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link active text-muted" aria-current="page" href="productos.html">Productos</a>
-                <a class="nav-link text-muted" href="nosotros.html">Nosotros</a>
-                <a class="nav-link text-muted" href="contacto.html">Contacto</a>
+                <a class="nav-link active text-light bg-dark" aria-current="page" href="productos.html">Productos</a>
+                <a class="nav-link text-light bg-dark" href="nosotros.html">Nosotros</a>
+                <a class="nav-link text-light bg-dark" href="contacto.html">Contacto</a>
               </div>
             </div>
           </div>
         </nav>
       </header>
-      <main class="mainNosotros bg-light">
-        <div class="contenedorFormulario">
+      <main class="mainNosotros bg-secondary">
+        <div class="contenedorFormulario text-light">
           <h2>Completa el formulario</h2>
-          <p class="lead">
+          <p class="lead text-light">
             Una vez recibido el correo con tu solicitud, te enviaremos una confirmacion de tu consulta.
             Todos los datos aqui ingresados, se mantienen ocultos y no son compartidos con otras compañias. Gracias por elegirnos. 
           </p>
         </div>
         <form class="formulario">
-          <div class="col-md-7 col-lg-8">
-            <h4 class="mb-3">Datos de contacto</h4>
+          <div class="col-md-7 col-lg-8 col-sm-auto">
+            <h4 class="mb-3 row-cols-sm-auto text-light">Datos de contacto</h4>
             <form class="needs-validation" novalidate="">
               <div class="row g-3">
                 <div class="col-sm-6">
-                  <label for="firstName" class="form-label">Nombre</label>
+                  <label for="firstName" class="form-label text-white-50">Nombre</label>
                   <input
                     type="text"
                     class="form-control"
@@ -57,7 +58,7 @@
                   />
                 </div>
                 <div class="col-sm-6">
-                  <label for="lastName" class="form-label">Apellido</label>
+                  <label for="lastName" class="form-label text-white-50">Apellido</label>
                   <input
                     type="text"
                     class="form-control"
@@ -68,7 +69,7 @@
                   />
                 </div>
                 <div class="col-12">
-                  <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                  <label for="email" class="form-label text-white-50">Email <span class="text-muted"></span></label>
                   <input
                     type="email"
                     class="form-control"
@@ -77,7 +78,7 @@
                   />
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+                    <label for="exampleFormControlTextarea1" class="form-label text-white-50">Comentarios</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <div class="col-12">
@@ -88,9 +89,9 @@
       <footer>
         <div class="contenedorFooter bg-dark">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3 nav-dark bg-dark">
-          <li class="nav-link"><a href="https://facebook.com"><i class="bi bi-facebook text-secondary fs-2"></i></a></li>
-          <li class="nav-link"><a href="https://instagram.com"><i class="bi bi-instagram text-secondary fs-2"></i></a></li>
-          <li class="nav-link"><a href="https://twitter.com"><i class="bi bi-twitter text-secondary fs-2"></i></a></li>
+          <li data-aos="zoom-in" data-aos-delay="50" data-aos-duration="4000" class="nav-link"><a href="https://facebook.com"><i class="bi bi-facebook text-secondary fs-2"></i></a></li>
+          <li data-aos="zoom-in" data-aos-delay="50" data-aos-duration="4000" class="nav-link"><a href="https://instagram.com"><i class="bi bi-instagram text-secondary fs-2"></i></a></li>
+          <li data-aos="zoom-in" data-aos-delay="50" data-aos-duration="4000" class="nav-link"><a href="https://twitter.com"><i class="bi bi-twitter text-secondary fs-2"></i></a></li>
         </ul>
         <p class="text-center text-muted">© 2021 Company, Inc</p>
         </div>
@@ -100,5 +101,12 @@
       crossorigin="anonymous">
     </script>
     <script src="js-bt/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+			AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
+		</script>
   </body>
 </html>

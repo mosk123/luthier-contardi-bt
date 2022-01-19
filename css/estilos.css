@@ -50,7 +50,7 @@
 .contenedorBoton {
   padding-left: 11rem;
   padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
 }
 
 /*---------FORMULARIO------*/
@@ -98,6 +98,13 @@
 .contenedorTexto{
   width: 100%;
 }
+.formulario{
+  padding-left: 3rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
+}
+
+
 }
 @media (min-width: 1040px) {
 
