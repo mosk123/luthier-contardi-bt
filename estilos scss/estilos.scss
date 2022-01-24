@@ -92,18 +92,28 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-left: 1rem;
+    padding-left: 2rem;
     padding-top: 3rem;
+    h2{
+        padding-bottom: 2rem;
+    }
 }
 
 .lead {
     width: 70%;
 }
 
-.formulario {
-    padding-left: 18rem;
+.formularioNuevo{
+    display: flex;
+    
+}
+
+.formulario {  
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     padding-top: 4rem;
-@media (min-width: 360px) {
+@media (min-width: 360px){
     padding-left: 3rem;
     padding-right: 2rem;
     

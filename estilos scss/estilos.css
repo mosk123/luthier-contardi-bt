@@ -115,16 +115,31 @@ img {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding-left: 1rem;
+  padding-left: 2rem;
   padding-top: 3rem;
+}
+
+.contenedorFormulario h2 {
+  padding-bottom: 2rem;
 }
 
 .lead {
   width: 70%;
 }
 
+.formularioNuevo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .formulario {
-  padding-left: 18rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding-top: 4rem;
 }
 
