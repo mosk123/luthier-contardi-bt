@@ -14,6 +14,9 @@
           justify-content: space-between;
   width: 100%;
   height: 5rem;
+  border-style: solid;
+  border-bottom-color: lightgray;
+  border-width: 0.1rem;
 }
 
 .divLogo {
@@ -56,9 +59,14 @@ img {
   background-repeat: no-repeat;
   border-style: solid;
   border-color: lightgray;
-  border-width: 0.1rem 0rem;
+  border-width: 0rem 0rem;
   width: 100%;
   height: 36rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 @media (min-width: 1040px) {
@@ -68,7 +76,7 @@ img {
     background-position: 0px -560px;
     border-style: solid;
     border-color: lightgray;
-    border-width: 0.1rem 0rem;
+    border-width: 0rem 0rem 0.1rem;
     width: 100%;
     height: auto;
   }
@@ -89,9 +97,8 @@ img {
 }
 
 .contenedorBoton {
-  padding-left: 11rem;
+  width: 50%;
   padding-top: 3rem;
-  padding-bottom: 7rem;
 }
 
 @media (min-width: 360px) {
@@ -123,8 +130,13 @@ img {
   padding-bottom: 2rem;
 }
 
-.lead {
+.contenedorFormulario p {
+  text-align: center;
   width: 70%;
+}
+
+.lead {
+  width: 100%;
 }
 
 .formularioNuevo {
@@ -152,8 +164,7 @@ img {
 
 /*------PRODUCTOS-------*/
 .tituloProductos {
-  padding-bottom: 2rem;
-  padding-right: 2rem;
+  padding-bottom: 0rem;
 }
 
 @media (min-width: 360px) {
@@ -161,10 +172,6 @@ img {
     padding-left: 1rem;
     padding-top: 2rem;
   }
-}
-
-.leyendaProductos {
-  padding-left: 9rem;
 }
 
 /*-----FOOTER-------*/
