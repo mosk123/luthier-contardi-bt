@@ -46,6 +46,11 @@ img {
 }
 
 /*--------CONTENIDOS--------*/
+.mainNosotros {
+  background-image: url(../img/ffffonde.JPG);
+  background-size: cover;
+}
+
 .fondo {
   background-color: #212529;
 }
@@ -59,11 +64,19 @@ img {
   border-width: 0rem 0rem;
   width: 100%;
   height: 36rem;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (min-width: 1040px) {
@@ -75,7 +88,7 @@ img {
     border-color: lightgray;
     border-width: 0rem 0rem 0rem;
     width: 100%;
-    height: auto;
+    height: 44rem;
   }
 }
 
