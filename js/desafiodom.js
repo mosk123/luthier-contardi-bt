@@ -34,7 +34,10 @@ container.append(contenedor);
 
 }
 
-/* CAMBIA EL COLOR DE LOS PRIMEROS BOTONES MEDIANTE UN PROMPT */
+
+
+
+/* CAMBIA EL COLOR DE LOS PRIMEROS BOTONES MEDIANTE UN PROMPT 
 
 let color = document.getElementById("color");
 let color2 = document.getElementById("color2");
@@ -80,4 +83,5 @@ else{
     color7.className = "btn btn-outline-dark"
     color8.className = "btn btn-outline-dark"
     color9.className = "btn btn-outline-dark"
-}
+} */
+

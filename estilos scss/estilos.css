@@ -119,6 +119,65 @@ img {
   }
 }
 
+/* PRODUCTOS */
+.contenedorProductos {
+  width: 100%;
+  height: 40rem;
+  padding-top: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cardNueva {
+  width: 10%;
+  height: 16rem;
+}
+
+.card-title {
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 10rem;
+  padding-top: 2rem;
+}
+
+.card-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  padding-top: 7rem;
+}
+
+.btn-dark {
+  padding-left: 1rem;
+}
+
 /*---------FORMULARIO------*/
 .contenedorFormulario {
   display: -webkit-box;
@@ -180,12 +239,13 @@ img {
 /*------PRODUCTOS-------*/
 .tituloProductos {
   padding-bottom: 0rem;
+  padding-top: 7rem;
 }
 
 @media (min-width: 360px) {
   .tituloProductos {
     padding-left: 1rem;
-    padding-top: 2rem;
+    padding-top: rem;
   }
 }
 
