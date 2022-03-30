@@ -39,7 +39,7 @@
               <li><a class="nav-link text-light" href="productos.html"><i class="bi bi-cart4 text light f3"></i></a></li>
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
+                <button class="btn btn-outline-light" id="btnCarrito" type="submit">Buscar</button>
               </form>
             </div>
           </div>
@@ -47,7 +47,7 @@
       </nav>
     </header>
     <main class="mainNosotros">
-      <section class="text-center container">
+      <section class="text-center contenedorTituloProd">
         <div class="row py-lg-4">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="text-light py-1 px-3 tituloProductos">Guitarras y Bajos</h1>
@@ -55,10 +55,11 @@
           </div>
         </div>
       </section>
-        <div class="contenedorProductos"  id="container">
-        </div>
-      <div class="carrito" id="contenedorCarrito"></div>
-      <button class="botonCarrito" id="btnCarrito">Ver Carrito</button>
+            <div class="contenedorProductos"  id="container">
+            </div>
+           <div class="carrito" id="contenedorCarrito"></div>
+           <select name="" id="eliminarProductos"></select>
+           <button id="btnEliminarProd">Eliminar Producto</button>
     </main>
     <footer>
       <div class="contenedorFooter bg-dark">
