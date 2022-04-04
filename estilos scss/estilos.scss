@@ -130,11 +130,6 @@ body{
     
 }
 
-.addToCart{
-    width: 8rem;
-
-}
-
 
 /*---------FORMULARIO------*/
 
@@ -181,8 +176,13 @@ body{
 /*------CARRITO-------*/
 
 .carrito{
-    width: 50%;
-    height: 8rem;
+    background-color: azure;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .tituloProductos {

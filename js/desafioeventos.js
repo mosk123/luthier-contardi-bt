@@ -23,11 +23,11 @@ const selectEliminar = document.getElementById('eliminarProductos');
 
 if (!localStorage.getItem('guitarras')) localStorage.setItem('guitarras', JSON.stringify(guitarras));
 
-const renderizarTienda = (guitarras) => {
+const renderizarTienda = (objetoGuitarras) => {
 
   contenedorProductos.innerHTML = '';
 
-for(const guitarra of guitarras){ 
+for (const guitarra of objetoGuitarras){ 
     
 const divProducto = document.createElement("div");
 const svgProducto = document.createElement("img");
@@ -42,7 +42,7 @@ svgProducto.styleName = "background-image: url(`${guitarra.img}`)";
 divTitulo.className = "card-body text-center";
 nombreProducto.className = "card-title";
 precioProducto.className = "card-text";
-botonComprar.className = "btn btn-outline-dark addToCart";
+botonComprar.className = "btn btn-outline-dark";
 
 svgProducto.src = guitarra.img;
 nombreProducto.append(guitarra.modelo);
@@ -52,9 +52,10 @@ botonComprar.id = guitarra.id;
 
 
 botonComprar.onclick = () => {
-  const Comprado = guitarras.find(guitarra => guitarra.id === botonComprar.id);
-  carrito.push({ modelo: Comprado.modelo, precio: Comprado.precio })
+  const Comprado = guitarras.find(guitarra => `${guitarra.id}` === botonComprar.id);
+  carrito.push({ modelo: Comprado.modelo, precio: Comprado.precio})
   localStorage.setItem("carrito", JSON.stringify(carrito))
+  
 }
 
 
@@ -84,17 +85,19 @@ const mostrarCarrito = () => {
   
 
   for (const guitarra of carrito) {
-    const nombreProducto = `<h5>Producto : ${guitarra.nombre}</h5>`
+    const nombreProducto = `<h5>Producto : ${guitarra.modelo}</h5>`
     const precioProducto = `<h3>Precio : ${guitarra.precio}</h3>`
     contenedorCarrito.innerHTML += nombreProducto
     contenedorCarrito.innerHTML += precioProducto
+  
+
 
   }
     const total = carrito.reduce((accumulador, guitarra) => accumulador + guitarra.precio, 0);
-    contenedorCarrito.append(`${total}`);
+    contenedorCarrito.append(`Total : ${total}`);
 
-}
-const eliminarProducto = (guitarraId) => {
+
+  const eliminarProducto = (guitarraId) => {
   selectEliminar.innerHTML = '';
   const guitarras = JSON.parse(localStorage.getItem("guitarras"))
   guitarrasNuevo = guitarras.filter(guitarra => guitarra.id !== guitarraId);
@@ -103,6 +106,7 @@ const eliminarProducto = (guitarraId) => {
   renderizarTienda(JSON.parse(localStorage.getItem('guitarras')))
 
 
+}
 }
 
 btnEliminar.onclick = () => eliminarProducto(selectEliminar.value);
