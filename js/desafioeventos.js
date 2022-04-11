@@ -11,14 +11,11 @@ const guitarras =[{id: 1, modelo: "Zbt", img: "./img/Rgtr01.JPG", precio: 220000
                   
                 ];
                 
-const carrito = []
+
 
 const container = document.getElementById('container');
-const contenedorCarrito = document.getElementById('contenedorCarrito');
 const btnCarrito = document.getElementById("btnCarrito");
 const contenedorProductos = document.getElementsByName("contenedorProductos");
-const btnEliminar = document.getElementById('btnEliminarProd');
-const selectEliminar = document.getElementById('eliminarProductos');
 
 
 if (!localStorage.getItem('guitarras')) localStorage.setItem('guitarras', JSON.stringify(guitarras));
@@ -42,7 +39,7 @@ svgProducto.styleName = "background-image: url(`${guitarra.img}`)";
 divTitulo.className = "card-body text-center";
 nombreProducto.className = "card-title";
 precioProducto.className = "card-text";
-botonComprar.className = "btn btn-outline-dark";
+botonComprar.className = "btn btn-outline-dark button";
 
 svgProducto.src = guitarra.img;
 nombreProducto.append(guitarra.modelo);
@@ -51,64 +48,74 @@ botonComprar.append('Comprar');
 botonComprar.id = guitarra.id;
 
 
-botonComprar.onclick = () => {
-  const Comprado = guitarras.find(guitarra => `${guitarra.id}` === botonComprar.id);
-  carrito.push({ modelo: Comprado.modelo, precio: Comprado.precio})
-  localStorage.setItem("carrito", JSON.stringify(carrito))
-  
-}
-
-
 divProducto.append(svgProducto, divTitulo, nombreProducto, precioProducto, botonComprar);
 
 container.append(divProducto);
-
-const option = document.createElement('option');
-option.value = guitarra.id;
-option.text = guitarra.modelo;
-selectEliminar.append(option)
 
 }
 }
 renderizarTienda(JSON.parse(localStorage.getItem('guitarras')))
 
-/* const agregarAlCarrito = document.querySelectorAll(".addToCart");
-agregarAlCarrito.forEach(agregar =>{
-  agregar.addEventListener("click", () => console.log("click"))
+/* Boton Carrito */
+
+const clickBtn = document.querySelectorAll(".button");
+const tbody = document.querySelector('.tbody');
+let carrito = []
+
+clickBtn.forEach(btn =>{
+  btn.addEventListener("click", (agregarAlCarrito))
 })
- */
 
 
+function agregarAlCarrito(e){
+  const button = e.target
+  const item = button.closest(".card");
+  const itemTitle = item.querySelector(".card-title").textContent;
+  const itemPrecio = item.querySelector(".card-text").textContent;
 
-const mostrarCarrito = () => {
-
-  
-
-  for (const guitarra of carrito) {
-    const nombreProducto = `<h5>Producto : ${guitarra.modelo}</h5>`
-    const precioProducto = `<h3>Precio : ${guitarra.precio}</h3>`
-    contenedorCarrito.innerHTML += nombreProducto
-    contenedorCarrito.innerHTML += precioProducto
-  
-
+  const nuevoItem = {
+    title: itemTitle,
+    precio: itemPrecio,
+    cantidad: 1,
 
   }
-    const total = carrito.reduce((accumulador, guitarra) => accumulador + guitarra.precio, 0);
-    contenedorCarrito.append(`Total : ${total}`);
-
-
-  const eliminarProducto = (guitarraId) => {
-  selectEliminar.innerHTML = '';
-  const guitarras = JSON.parse(localStorage.getItem("guitarras"))
-  guitarrasNuevo = guitarras.filter(guitarra => guitarra.id !== guitarraId);
-  localStorage.setItem('guitarras', JSON.stringify(guitarrasNuevo))
-
-  renderizarTienda(JSON.parse(localStorage.getItem('guitarras')))
-
-
-}
+  agregarItemCarrito(nuevoItem)
 }
 
-btnEliminar.onclick = () => eliminarProducto(selectEliminar.value);
+function agregarItemCarrito(nuevoItem){
 
-btnCarrito.onclick = mostrarCarrito;
+carrito.push(nuevoItem)
+
+renderCarrito();
+}
+
+function renderCarrito(){
+
+tbody.innerHTML = "";
+carrito.map(item => {
+   const tr = document.createElement("tr")
+   tr.classList.add("itemCarrito")
+
+   const Content = `
+   <tr>
+   <th scope="row">1</th>
+   <td class="table__productos">
+   <h6 class="title">${item.title}</h6>
+   </td>
+   <td class="table__price"><p>${item.precio}</p></td>
+   <td class="table__cantidad">
+   <input type="number" min="1" value=${item.cantidad} class="input__elemento">
+   <button class="delete btn btn-danger">x</button>
+   /td>
+ </tr>
+   `
+
+  tr.innerHTML = Content;
+  tbody.append(tr)
+})
+}
+
+
+
+
+
