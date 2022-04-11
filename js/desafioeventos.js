@@ -59,8 +59,8 @@ renderizarTienda(JSON.parse(localStorage.getItem('guitarras')))
 /* Boton Carrito */
 
 const clickBtn = document.querySelectorAll(".button");
-const tbody = document.querySelector('.tbody');
-let carrito = []
+const tbody = document.getElementsByName('tbody');
+const carrito = []
 
 clickBtn.forEach(btn =>{
   btn.addEventListener("click", (agregarAlCarrito))
@@ -91,13 +91,12 @@ renderCarrito();
 
 function renderCarrito(){
 
-tbody.innerHTML = "";
+tbody.innerHTML = ''
 carrito.map(item => {
    const tr = document.createElement("tr")
    tr.classList.add("itemCarrito")
 
    const Content = `
-   <tr>
    <th scope="row">1</th>
    <td class="table__productos">
    <h6 class="title">${item.title}</h6>
@@ -107,13 +106,17 @@ carrito.map(item => {
    <input type="number" min="1" value=${item.cantidad} class="input__elemento">
    <button class="delete btn btn-danger">x</button>
    /td>
- </tr>
    `
 
   tr.innerHTML = Content;
-  tbody.append(tr)
+  tbody.append(tr);
+
+  tr.querySelector(".delete").addEventListener('click', removeItemCarrito)
+  tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
 })
+CarritoTotal()
 }
+
 
 
 
