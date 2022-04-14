@@ -171,6 +171,10 @@ body {
   height: 70%;
 }
 
+.carritoTable {
+  display: none;
+}
+
 /*---------FORMULARIO------*/
 .contenedorFormulario {
   display: -webkit-box;
