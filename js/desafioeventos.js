@@ -121,9 +121,9 @@ CarritoTotal()
 
 /* boton carrito */
 
-let boton = document.getElementById("btnCarrito")
+const boton = document.getElementById("btnCarrito")
 boton.onclick = () => {
-  document.getElementsByTagName("h4").className.remove("carritoTable")
+  boton.classList.remove("carritoTable");
 }
 
 

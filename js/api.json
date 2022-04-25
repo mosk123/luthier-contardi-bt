@@ -1,0 +1,8 @@
+ [  {"id": 1, "modelo": "Zbt", "img": "./img/Rgtr01.JPG", "precio": 220000},
+    {"id": 2, "modelo": "Gbr", "img": "./img/Rgtr02.JPG", "precio": 90000},
+    {"id": 3, "modelo": "Amb", "img": "./img/gtr1b.JPG", "precio": 120000},
+    {"id": 4, "modelo": "Cer", "img": "./img/gtr2.jpg", "precio": 115000},
+    {"id": 7, "modelo": "Rew", "img": "./img/gtr5.jpg", "precio": 75000},
+    {"id": 5, "modelo": "Pot", "img": "./img/gtr4.jpg", "precio": 230000},
+    {"id": 6, "modelo": "Htr", "img": "./img/gtr3.jpg", "precio": 85000},
+    {"id": 8, "modelo": "Ctr", "img": "./img/gtr6.jpg", "precio": 95000} ]
